@@ -39,14 +39,13 @@ class App extends React.Component {
       <h2 className='todo-list_header2 header'>Add todo</h2>
       <div className='todo-list_action'>
         <input className='todo-list_input' type="text" placeholder="Add new todo" onChange={this.addInputValue} value={this.state.inputValue}></input>
-        <button className='todo-list_submit' onClick={this.addToDo}> Submit </button>
+        <button className='todo-list_submit' onClick={this.addToDo}>Submit</button>
       </div>
       <ul>
         {this.state.toDoList.map((el)=>{
           return (
             <li className='todo-list_item' key={el}>{el.text}</li>
           )
-
         })}
       </ul>
     </div>

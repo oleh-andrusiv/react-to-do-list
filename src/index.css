@@ -70,5 +70,14 @@ ul, li {
   padding: 15px;
   border: solid 1px darkgrey;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
+.todo-list_item_text.done {
+  text-decoration: line-through;
+}
+
+.done-btn {
+  margin-right: 5px;
+}

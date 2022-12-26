@@ -14,8 +14,8 @@ class App extends React.Component {
 
   addToDo = () => {
     const item={
-      text:this.state.inputValue,
-      isDone:false,
+      text: this.state.inputValue,
+      isDone: "",
     }
     
     this.setState((prevState)=>{
@@ -52,9 +52,9 @@ class App extends React.Component {
           newToDoList.splice(elemID, 1);
         }
         
-        // if (event.target.classList.contains("done-btn")) {
-          
-        // }
+        if (event.target.classList.contains("done-btn")) {
+          newToDoList[elemID].isDone = "done-item"
+        }
 
         return {
           ...prevState,
@@ -78,7 +78,7 @@ class App extends React.Component {
         {this.state.toDoList.map((el)=>{
           return (
             <li className='todo-list_item' onClick={this.changeToDoState} key={el.text} id={this.state.toDoList.indexOf(el)}>
-              <span className={`todo-list_item_text`}>{el.text}</span>
+              <span className={`todo-list_item_text ${el.isDone}`}>{el.text}</span>
               <div className='todo-list_item_control'>
                 <button className='todo-list_item_btn done-btn'>&#9989;</button>
                 <button className='todo-list_item_btn close-btn'>&#10060;</button>

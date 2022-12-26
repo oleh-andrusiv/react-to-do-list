@@ -74,10 +74,11 @@ ul, li {
   justify-content: space-between;
 }
 
-.todo-list_item_text.done {
+.todo-list_item_text.done-item {
   text-decoration: line-through;
 }
 
 .done-btn {
   margin-right: 5px;
 }
+

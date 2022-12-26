@@ -36,7 +36,8 @@ ul, li {
 }
 
 .todo-list_header {
-  font-weight: 300;  
+  font-weight: 300; 
+  margin-bottom: 50px; 
 }
 
 .todo-list_header2 {
@@ -47,28 +48,53 @@ ul, li {
 .todo-list_action {
   display: flex;
   flex-direction: column;
+  margin: 20px 0 30px;
 }
 
 .todo-list_input {
   width: 600px;
-  height: 30px;
-  padding: 3px;
+  height: 40px;
+  padding: 5px 10px;
 }
 
 .todo-list_submit {
   color: white;
-  width: 90px;
-  height: 30px;
-  border-radius: 3px;
+  font-size: 16px;
+  width: max-content;
+  border-radius: 5px;
+  border: none;
   background-color: blue;
-  margin: 15px 0 20px;
+  margin: 20px 0;
+  padding: 15px 25px;
+  cursor: pointer;
 }
 
 .todo-list_item {
   width: 600px;
-  height: 50px;
+  height: max-content;
   padding: 15px;
   border: solid 1px darkgrey;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.todo-list_item_control {
+  width: 20%;
+  display: flex;
+  justify-content: end;
+}
+
+.todo-list_item_btn {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.todo-list_item_text.done-item {
+  text-decoration: line-through;
+}
+
+.done-btn {
+  margin-right: 10px;
+}

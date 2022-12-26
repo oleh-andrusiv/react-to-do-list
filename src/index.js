@@ -13,24 +13,26 @@ class App extends React.Component {
   }
 
   addToDo = () => {
-    const item={
-      text: this.state.inputValue,
-      isDone: "",
-    }
-    
-    this.setState((prevState)=>{
-      const newToDoList = prevState.toDoList.slice()
-      newToDoList.push(item)
-            return{
-      ...prevState, 
-      toDoList: newToDoList,
-      inputValue: "",
+    if (this.state.inputValue !== "") {
+      const item={
+        text: this.state.inputValue,
+        isDone: "",
       }
-    })
+      
+      this.setState((prevState)=>{
+        const newToDoList = prevState.toDoList.slice()
+        newToDoList.push(item)
+              return{
+        ...prevState, 
+        toDoList: newToDoList,
+        inputValue: "",
+        }
+      })
+    }
   }
 
   addInputValue =(event)=>{
-    this.setState({inputValue:event.target.value})
+    this.setState({inputValue: event.target.value})
   }
 
   changeToDoState = (event) => {
@@ -77,7 +79,7 @@ class App extends React.Component {
       <ul>
         {this.state.toDoList.map((el)=>{
           return (
-            <li className='todo-list_item' onClick={this.changeToDoState} key={el.text} id={this.state.toDoList.indexOf(el)}>
+            <li className='todo-list_item' onClick={this.changeToDoState} key={el.text + this.state.toDoList.indexOf(el)} id={this.state.toDoList.indexOf(el)}>
               <span className={`todo-list_item_text ${el.isDone}`}>{el.text}</span>
               <div className='todo-list_item_control'>
                 <button className='todo-list_item_btn done-btn'>&#9989;</button>
